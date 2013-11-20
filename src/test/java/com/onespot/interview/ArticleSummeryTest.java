@@ -22,8 +22,8 @@ public class ArticleSummeryTest
     @Test
     public void testSetUrl()
     {
-        Element HTML_Element_ContainingArticleLink = getMockElementContainingArticleLink();
-        ArticleSummery article = new ArticleSummery(HTML_Element_ContainingArticleLink);
+        Element htmlElementContainingArticleLink = getMockElementContainingArticleLink();
+        ArticleSummery article = new ArticleSummery(htmlElementContainingArticleLink);
         article.setUrl();
         String trueUrl ="http://techcrunch.com/2013/11/19/mixbook-debuts-montage-a-photo-book-builder-meant-to-take-minutes-not-hours/";
         assertEquals(article.url, trueUrl);
@@ -34,7 +34,7 @@ public class ArticleSummeryTest
     {
         String HTML_Code_ContainingArticleLink = "<h2 class=\"post-title\"><a href=\"http://techcrunch.com/2013/11/19/mixbook-debuts-montage-a-photo-book-builder-meant-to-take-minutes-not-hours/\" data-omni-sm=\"gbl_river_headline\">Mixbook Debuts Montage, A Photo Book Builder Meant To Take Minutes, Not&nbsp;Hours</a></h2>";
         Document docContainingArticleLink = Jsoup.parse(HTML_Code_ContainingArticleLink);
-        return docContainingArticleLink.select(CSSPatterns.ARTICLE_LINKS).get(0);
+        return docContainingArticleLink.select(CSSPatterns.ARTICLE_LINKS_ON_HOME_PAGE).get(0);
     }
 
     @Test
@@ -86,7 +86,7 @@ public class ArticleSummeryTest
         article.url = "d";
         article.title = "c";
         String trueArticleCSV = "c,d,a,b";
-        assertEquals(article.getMembersInCSVString(), trueArticleCSV);
+        assertEquals(article.getSummeryCSV(), trueArticleCSV);
     }
  /*
  testing setTitle fails because the characters "&nbsp;" in the HTML doc encode data that counts as more than 1 character
@@ -97,8 +97,8 @@ public class ArticleSummeryTest
    @Test
    public void testSetTitle()
     {
-        Element HTML_Element_ContainingArticleLink = getMockElementContainingArticleLink();
-        ArticleSummery article = new ArticleSummery(HTML_Element_ContainingArticleLink);
+        Element htmlElementContainingArticleLink = getMockElementContainingArticleLink();
+        ArticleSummery article = new ArticleSummery(htmlElementContainingArticleLink);
         article.setTitle();
         String trueTitle = new String("Mixbook Debuts Montage, A Photo Book Builder Meant To Take Minutes, Not Hours");
         System.out.println(article.title+"\n"+trueTitle);  //the console output from this line demonstrates equivalence of expected and generated strings;

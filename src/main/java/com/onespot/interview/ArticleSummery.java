@@ -14,25 +14,27 @@ public class ArticleSummery
     public String company;
     public String companyUrl;
 
-    private Element HTML_Element_ContainingArticleLink;
-
-    public ArticleSummery(Element HTML_Element_ContainingSingleArticleLink)
-    {
-        this.HTML_Element_ContainingArticleLink = HTML_Element_ContainingSingleArticleLink;
-    }
+    private Element htmlElementContainingArticleLink;
 
     public ArticleSummery() {}
 
-    public void setArticleSummery(Element HTML_Element_ContainingSingleArticleLink)
+    public ArticleSummery(Element htmlElementContainingSingleArticleLink)
     {
-        this.HTML_Element_ContainingArticleLink = HTML_Element_ContainingSingleArticleLink;
+        /* this constructor exists to make unit tests easier */
+        this.htmlElementContainingArticleLink = htmlElementContainingSingleArticleLink;
+    }
+
+
+    public void setArticleSummery(Element htmlElementContainingArticleLink)
+    {
+        this.htmlElementContainingArticleLink = htmlElementContainingArticleLink;
         setTitle();
         setUrl();
         setCompany();
         setCompanyUrl();
     }
 
-    public String getMembersInCSVString()
+    public String getSummeryCSV()
     {
         return title + "," + url + "," + company + "," + companyUrl;
     }
@@ -40,43 +42,43 @@ public class ArticleSummery
 
     public void setTitle()
     {
-        title = HTML_Element_ContainingArticleLink.text();
+        title = htmlElementContainingArticleLink.text();
     }
 
     public void setUrl()
     {
-        Element HTML_Element_ContainingArticleUrl = HTML_Element_ContainingArticleLink.child(0);
-        url = HTML_Element_ContainingArticleUrl.attr(CSSPatterns.URL_ATTRIBUTE);
+        Element htmlElementContainingArticleUrl = htmlElementContainingArticleLink.child(0);
+        url = htmlElementContainingArticleUrl.attr(CSSPatterns.URL_ATTRIBUTE);
     }
 
     public void setCompany()
     {
         try {
-            Document articleHTML = Jsoup.connect(this.url).get();
-            Elements HTML_Elements_ContainingCompanyName = articleHTML.select(CSSPatterns.COMPANY_NAME);
-            if (HTML_Elements_ContainingCompanyName.isEmpty())
-                company = "n/a";
-            else
-                company = HTML_Elements_ContainingCompanyName.get(0).text();
+              Document articleHTML = Jsoup.connect(this.url).get();
+              Elements htmlElementsContainingCompanyName = articleHTML.select(CSSPatterns.COMPANY_NAME);
+              if (htmlElementsContainingCompanyName.isEmpty())
+                  company = "n/a";
+              else
+                  company = htmlElementsContainingCompanyName.get(0).text();
         }
         catch (IOException e) {
-            System.err.println(e);
+              System.err.println(e);
         }
     }
 
     public void setCompanyUrl()
     {
         try {
-            Document articleHTML = Jsoup.connect(this.url).get();
-            Elements HTML_Elements_ContainingCompanyUrl = articleHTML.select(CSSPatterns.COMPANY_URL);
-            if (HTML_Elements_ContainingCompanyUrl.isEmpty())
-                companyUrl = "n/a";
-            else
-                companyUrl = HTML_Elements_ContainingCompanyUrl.get(0).attr(CSSPatterns.URL_ATTRIBUTE);
+              Document articleHTML = Jsoup.connect(this.url).get();
+              Elements htmlElementsContainingCompanyUrl = articleHTML.select(CSSPatterns.COMPANY_URL);
+              if (htmlElementsContainingCompanyUrl.isEmpty())
+                  companyUrl = "n/a";
+              else
+                  companyUrl = htmlElementsContainingCompanyUrl.get(0).attr(CSSPatterns.URL_ATTRIBUTE);
 
         }
         catch (IOException e) {
-            System.err.println(e);
+              System.err.println(e);
         }
     }
 }
