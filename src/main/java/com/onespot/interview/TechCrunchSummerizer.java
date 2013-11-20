@@ -10,7 +10,7 @@ package com.onespot.interview;
 public class TechCrunchSummerizer {
     public static void main(String[] args) {
         NewsSiteSummarizer techCrunch = new NewsSiteSummarizer("http://TechCrunch.com/");
-        techCrunch.writeArticleSummariesToCSV("/Users/alexhawk/jvPrac/techCrunch");
+        techCrunch.writeArticleSummariesToCSV("arg[0]");
     }
 
 }
