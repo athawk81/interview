@@ -34,7 +34,7 @@ public class ArticleSummery
 
     public String getMembersInCSVString()
     {
-        return company + "," + companyUrl + "," + title + "," + url;
+        return title + "," + url + "," + company + "," + companyUrl;
     }
 
 
