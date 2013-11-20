@@ -85,7 +85,7 @@ public class ArticleSummeryTest
         article.companyUrl = "b";
         article.url = "d";
         article.title = "c";
-        String trueArticleCSV = "a,b,c,d";
+        String trueArticleCSV = "c,d,a,b";
         assertEquals(article.getMembersInCSVString(), trueArticleCSV);
     }
  /*
