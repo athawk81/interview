@@ -22,7 +22,8 @@ public class NewsSiteSummarizerTest {
     @Test
     public void newsSummarizerTest()
     {
-        newsSummarizerTest.writeArticleSummariesToCSV("/Users/alexhawk/jvPrac/techCrunch");
-        assertEquals(1,1);
+        int numWrites = newsSummarizerTest.writeArticleSummariesToCSV("/Users/alexhawk/jvPrac/techCrunch");
+        int numArticlesOnTechCrunchHomePage = 20;
+        assertEquals(numWrites, numArticlesOnTechCrunchHomePage);
     }
 }

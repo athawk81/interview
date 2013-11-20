@@ -28,21 +28,24 @@ public class NewsSiteSummarizer {
         }
     }
 
-    public void writeArticleSummariesToCSV(String fileName)
+    public int writeArticleSummariesToCSV(String fileName)
     {
+        int numWrites=0;
         try {
             File file = new File(fileName);
             BufferedWriter output = new BufferedWriter(new FileWriter(file));
+
             for (Element HTML_Element_ContainingSingleArticleLink : HTML_Elements_ContainingArticleLinks)  {
                 article.setArticleSummery(HTML_Element_ContainingSingleArticleLink);
-                //System.out.println(article.getMembersInCSVString());
                 output.write(article.getMembersInCSVString() + "\n");
+                numWrites++;
              }
             output.close();
             }
             catch (IOException e) {
                 System.err.println(e);
         }
+        return numWrites;
     }
 }
 
