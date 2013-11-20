@@ -7,7 +7,8 @@
     <ignored path="interview.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="614422cb-76a2-452f-ab6a-9bb77513662b" time="1384920228134" ignored="false" />
-    <file path="/fragment.java" changelist="614422cb-76a2-452f-ab6a-9bb77513662b" time="1384921955206" ignored="false" />
+    <file path="/fragment.java" changelist="614422cb-76a2-452f-ab6a-9bb77513662b" time="1384922611793" ignored="false" />
+    <file path="/TechCrunchSummerizer.java" changelist="614422cb-76a2-452f-ab6a-9bb77513662b" time="1384922644861" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,16 +81,25 @@
       <file leaf-file-name="TechCrunchSummerizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/onespot/interview/TechCrunchSummerizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="53" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
+            <state line="12" column="36" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsSiteSummarizerTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewsSiteSummarizer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/onespot/interview/NewsSiteSummarizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="-0.16816144">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsSiteSummarizerTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/onespot/interview/NewsSiteSummarizerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="293" selection-end="293" vertical-scroll-proportion="0.13452914">
+            <state line="27" column="128" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -511,16 +521,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/onespot/interview/TechCrunchSummerizer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/onespot/interview/NewsSiteSummarizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="53" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
+        <state line="27" column="128" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/onespot/interview/NewsSiteSummarizerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/onespot/interview/TechCrunchSummerizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="293" selection-end="293" vertical-scroll-proportion="0.13452914">
+        <state line="12" column="36" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/onespot/interview/NewsSiteSummarizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="209" selection-end="209" vertical-scroll-proportion="-0.16816144">
           <folding />
         </state>
       </provider>
